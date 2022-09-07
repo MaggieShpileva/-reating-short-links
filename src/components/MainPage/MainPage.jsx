@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styles from './MainPage.module.scss';
-import { store } from '../redux/store';
+import { store } from '../../store';
 import { DataRow } from '../DataRow/DataRow';
 import { useNavigate } from 'react-router-dom';
 import Select from 'react-select';

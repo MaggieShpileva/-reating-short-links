@@ -1,11 +1,10 @@
 body {
   background-image: linear-gradient(
-      rgba(118, 97, 236, 0.5),
-      rgba(255, 255, 255, 0.5),
-      rgba(236, 243, 181, 0.5),
-      rgba(231, 125, 115, 0.5)
-    ),
-    url('../../images/bgFon.jpeg');
+    rgba(118, 97, 236, 0.5),
+    rgba(255, 255, 255, 0.5),
+    rgba(236, 243, 181, 0.5),
+    rgba(231, 125, 115, 0.5)
+  );
 }
 .MainPage {
   display: flex;
@@ -88,10 +87,13 @@ body {
       margin: 20px 0 20px 0;
     }
   }
-  .select {
+  .sort {
     width: 1200px;
     height: 40px;
     display: flex;
     justify-content: right;
+    .select {
+      width: 140px;
+    }
   }
 }

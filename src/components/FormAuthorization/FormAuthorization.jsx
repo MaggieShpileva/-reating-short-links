@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from '../FormAuthorization/FormAuthorization.module.scss';
 import { NavLink, useNavigate } from 'react-router-dom';
-import { store } from '../redux/store';
+import { store } from '../../store';
 
 export const FormAuthorization = () => {
   const navigate = useNavigate();

@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import styles from '../FormRegistration/FormRegistration.module.scss';
-import { store } from '../redux/store';
+import { store } from '../../store';
 import { NavLink, Link, useNavigate } from 'react-router-dom';
-import { postData } from '../../fetchers/register';
 
 export const FormRegistration = () => {
   const navigate = useNavigate();
@@ -27,34 +26,40 @@ export const FormRegistration = () => {
 
   const handleClick = async () => {
     store.registration = formValue;
-    try {
-      const params = new URLSearchParams();
-      params.set('username', username);
-      params.set('password', password1);
-      const response = await fetch(
-        `http://79.143.31.216/register?username=${formValue.username}&password=${formValue.password1}`,
-        {
-          method: 'POST', // *GET, POST, PUT, DELETE, etc.
-          cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-          credentials: 'same-origin', // include, *same-origin, omit
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          redirect: 'follow', // manual, *follow, error
-          referrerPolicy: 'no-referrer',
-          body: params,
+    if (password1 === password2) {
+      const password = password1;
+      try {
+        const params = new URLSearchParams();
+        params.set('username', username);
+        params.set('password', password1);
+        const response = await fetch(
+          `http://79.143.31.216/register?username=${formValue.username}&password=${formValue.password1}`,
+          {
+            method: 'POST', // *GET, POST, PUT, DELETE, etc.
+            cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+            credentials: 'same-origin', // include, *same-origin, omit
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            redirect: 'follow', // manual, *follow, error
+            referrerPolicy: 'no-referrer',
+            body: params,
+          }
+        );
+        const data = await response.json();
+        console.log(data);
+        if (response.status === 200) {
+          store.registration = data;
+          alert('Вы успешно зарегистрированы!');
+          navigate('/');
+        } else if (response.status === 400) {
+          alert('Пользователь с таким именем уже существует! ');
         }
-      );
-      const data = await response.json();
-      console.log(data);
-      if (response.status === 200) {
-        store.registration = data;
-        navigate('/');
-      } else if (response.status === 400) {
-        alert('Пользователь с таким именем уже существует! ');
+      } catch (e) {
+        console.log('Запрос не отправлен!');
       }
-    } catch (e) {
-      console.log('Запрос не отправлен!');
+    } else {
+      alert('Пароли не совпадают!');
     }
   };
   return (
