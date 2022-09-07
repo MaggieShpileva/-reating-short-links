@@ -1,24 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import { FormRegistration } from './components/FormRegistration/FormRegistration';
+import { FormAuthorization } from './components/FormAuthorization/FormAuthorization';
+import { BrowserRouter, Link, Route, Router, Routes } from 'react-router-dom';
+import { MainPage } from './components/MainPage/MainPage';
+import { store } from './components/redux/store/ConfigeStore';
+import { Provider } from 'react-redux';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Provider store={store}>
+        <Routes>
+          <Route path="/" element={<FormAuthorization />} />
+          <Route path="/Registration" element={<FormRegistration />} />
+          <Route path="/squeeze" element={<MainPage />} />
+        </Routes>
+      </Provider>
+    </BrowserRouter>
   );
 }
 

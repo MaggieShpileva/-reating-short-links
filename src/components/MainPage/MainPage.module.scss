@@ -1,0 +1,97 @@
+body {
+  background-image: linear-gradient(
+      rgba(118, 97, 236, 0.5),
+      rgba(255, 255, 255, 0.5),
+      rgba(236, 243, 181, 0.5),
+      rgba(231, 125, 115, 0.5)
+    ),
+    url('../../images/bgFon.jpeg');
+}
+.MainPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .username {
+    width: 1200px;
+    display: flex;
+    margin: 0 auto;
+    display: flex;
+    justify-content: end;
+    margin-top: 10px;
+    p {
+      font-size: 30px;
+      color: #051342;
+      font-weight: 500;
+    }
+  }
+  h1 {
+    text-transform: uppercase;
+    font-family: SourceSansPro;
+    font-size: 40px;
+    color: #311954;
+    line-height: 1.2;
+    text-align: center;
+    margin: 30px 0 30px 0;
+    font-weight: 400;
+  }
+  .row {
+    width: 1200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 auto;
+    p {
+      width: 400px;
+      height: 30px;
+      border: 1px solid;
+      margin: 5px;
+      text-align: center;
+      padding-top: 5px;
+    }
+    .id {
+      width: 80px;
+    }
+    .link {
+      width: 450px;
+    }
+    .count {
+      width: 180px;
+    }
+  }
+  .inputDiv {
+    width: 1200px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin: 20px 0 20px 0;
+    input {
+      width: 400px;
+      height: 30px;
+      padding: 5px 10px;
+      margin-right: 50px;
+      margin-left: 5px;
+    }
+    button {
+      width: 160px;
+      height: 50px;
+      border: none;
+      border-radius: 5px;
+      padding: 17px 20px;
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+      text-transform: uppercase;
+      background-image: linear-gradient(to left, #74ebd5, #9face6);
+      margin: 20px 0 20px 0;
+    }
+  }
+  .select {
+    width: 1200px;
+    height: 40px;
+    display: flex;
+    justify-content: right;
+  }
+}

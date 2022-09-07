@@ -1,0 +1,99 @@
+body {
+  overflow: hidden;
+}
+
+.FormAuthorization {
+  background-image: linear-gradient(
+      rgba(118, 97, 236, 0.5),
+      rgba(100, 9, 0, 0.5)
+    ),
+    url('../../images/bg-01.jpeg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  .mainConteiner {
+    position: relative;
+    border-radius: 10px;
+    font-family: Montserrat;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    width: 380px;
+    height: 600px;
+    display: flex;
+
+    h1 {
+      font-family: SourceSansPro-Bold;
+      font-size: 44px;
+      color: #294192;
+      line-height: 1.2;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .inputs {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 380px;
+      margin-top: 20px;
+      input {
+        width: 358px;
+        height: 50px;
+        border: 1px solid #ebebeb;
+        border-radius: 5px;
+        margin: 20px 0 20px 0;
+        padding: 0 0 0 20px;
+        font-size: 14px;
+        font-weight: 500;
+        color: #222;
+        box-shadow: rgba(100, 100, 111, 0.2) 10px 7px 29px 0px;
+      }
+    }
+
+    button {
+      width: 100%;
+      height: 50px;
+      border: none;
+      border-radius: 5px;
+      padding: 17px 20px;
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+      text-transform: uppercase;
+      background-image: linear-gradient(to left, #74ebd5, #9face6);
+      margin: 60px 0 40px 0;
+    }
+
+    .bottomText {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      height: 20px;
+      margin-top: 50px;
+
+      p {
+        color: #eaeaea;
+        font-weight: 500;
+        margin: 0;
+      }
+
+      .reg {
+        font-weight: 700;
+        color: #eaeaea;
+        text-decoration: underline;
+        margin-left: 7px;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
